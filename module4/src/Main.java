@@ -1,3 +1,5 @@
+import distance_between_points.Distance;
+import distance_between_points.Point;
 import square.Circle;
 import square.Rectangle;
 import square.Square;
@@ -15,6 +17,6 @@ public class Main {
         System.out.println("50 celsius degrees = " + new TemperatureConverter().celsiusToFahrenheit(50) + " fahrenheit degrees");
         System.out.println("50 fahrenheit degrees = " + new TemperatureConverter().fahrenheitToCelsius(50) + " celsius degrees");
 
-        
+        System.out.println("Distance between point1(3, 5) and point2(7, 12) = " + new Distance().distance(new Point(3, 5), new Point(7, 12)));
     }
 }
