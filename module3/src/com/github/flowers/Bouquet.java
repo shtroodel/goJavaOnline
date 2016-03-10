@@ -1,5 +1,7 @@
 package com.github.flowers;
 
+import java.util.List;
+
 public class Bouquet {
-    private Flower[] flowers;
+    private List<Flower> flowers;
 }
