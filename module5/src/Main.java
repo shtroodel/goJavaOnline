@@ -1,25 +1,18 @@
+import arrays.ArrayCreation;
+import arrays.QuickSortOfArray;
+import arrays.ValuesOfArray;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Input array's size:");
-        final Scanner scanner = new Scanner(System.in);
-        int[] array = ArraysMagic.createNewIntArray(scanner.nextInt());
+        int[] array = ArrayCreation.inputSizeOfArray();
+        ArrayCreation.printArray(array);
 
-        System.out.println("Our new array: ");
+        ValuesOfArray.printMaxValue(array);
+        ValuesOfArray.printMinValue(array);
 
-        for (int value : array) {
-            System.out.println(value);
-        }
-
-        System.out.println("Minimum value: " + ArraysMagic.getMinValueOfIntArray(array));
-        System.out.println("Maximum value: " + ArraysMagic.getMaxValueOfIntArray(array));
-
-        System.out.println("Sorted array: ");
-
-        for (int value : ArraysMagic.quickSortOfIntArray(array)) {
-            System.out.println(value);
-        }
+        QuickSortOfArray.printSortedArray(array);
     }
 }
