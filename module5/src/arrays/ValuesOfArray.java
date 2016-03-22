@@ -2,7 +2,7 @@ package arrays;
 
 public class ValuesOfArray {
 
-    public static int getMinValueOfArray(int[] array) {
+    public static int getMinValue(int[] array) {
 
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -14,7 +14,7 @@ public class ValuesOfArray {
         return min;
     }
 
-    public static int getMaxValueOfArray(int[] array) {
+    public static int getMaxValue(int[] array) {
 
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -24,14 +24,6 @@ public class ValuesOfArray {
         }
 
         return max;
-    }
-
-    public static void printMinValue(int[] array){
-        System.out.println("Minimum value: " + getMinValueOfArray(array));
-    }
-
-    public static void printMaxValue(int[] array){
-        System.out.println("Maximum value: " + getMaxValueOfArray(array));
     }
 
 }

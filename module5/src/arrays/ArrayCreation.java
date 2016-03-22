@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ArrayCreation {
 
-    public static int[] createNewArray(int size) {
+    public static int[] create(int size) {
 
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
@@ -15,19 +15,11 @@ public class ArrayCreation {
         return array;
     }
 
-    public static void printArray(int[] array){
-        System.out.println("Our new array: ");
-
-        for (int value : array) {
-            System.out.println(value);
-        }
-    }
-
-    public static int[] inputSizeOfArray(){
+    public static int[] createNewArrayOfSize(){
 
         System.out.println("Input array's size:");
         final Scanner scanner = new Scanner(System.in);
-        int[] array = createNewArray(scanner.nextInt());
+        int[] array = create(scanner.nextInt());
 
         return array;
     }

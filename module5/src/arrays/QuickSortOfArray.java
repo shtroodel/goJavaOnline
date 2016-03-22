@@ -2,7 +2,7 @@ package arrays;
 
 public class QuickSortOfArray {
 
-    public static int[] quickSortOfArray(int[] array) {
+    public static int[] sort(int[] array) {
         quickSort(array, 0, array.length - 1);
 
         return array;
@@ -32,12 +32,4 @@ public class QuickSortOfArray {
 
     }
 
-    public static void printSortedArray(int[] array){
-
-        System.out.println("Sorted array: ");
-
-        for (int value : quickSortOfArray(array)) {
-            System.out.println(value);
-        }
-    }
 }
