@@ -4,11 +4,17 @@ public class ValuesOfArray {
 
     public static int getMinValue(int[] array) {
 
-        int min = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (min > array[i]) {
-                min = array[i];
+        int min =0;
+
+        try {
+            min = array[0];
+            for (int i = 1; i < array.length; i++) {
+                if (min > array[i]) {
+                    min = array[i];
+                }
             }
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("Error! array is empty" + ex.toString());
         }
 
         return min;
@@ -16,11 +22,17 @@ public class ValuesOfArray {
 
     public static int getMaxValue(int[] array) {
 
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
+        int max = 0;
+
+        try {
+            max = array[0];
+            for (int i = 1; i < array.length; i++) {
+                if (max < array[i]) {
+                    max = array[i];
+                }
             }
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("Error! array is empty" + ex.toString());
         }
 
         return max;

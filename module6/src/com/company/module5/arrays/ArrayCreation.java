@@ -1,5 +1,6 @@
 package com.company.module5.arrays;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,7 +20,17 @@ public class ArrayCreation {
 
         System.out.println("Input array's size:");
         final Scanner scanner = new Scanner(System.in);
-        int[] array = create(scanner.nextInt());
+
+        int[] array = null;
+
+        try {
+            array = create(scanner.nextInt());
+        } catch (InputMismatchException | NegativeArraySizeException ex) {
+
+            System.out.println("Error occured: " + ex.toString());
+            System.out.println("Try again:");
+            return createNewArrayOfSize();
+        }
 
         return array;
     }
