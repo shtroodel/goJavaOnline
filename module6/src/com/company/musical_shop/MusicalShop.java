@@ -1,29 +1,32 @@
 package com.company.musical_shop;
 
-import javax.sound.midi.MidiChannel;
+import com.company.musical_shop.exceptions.NoInstrumentLeftException;
+import com.company.musical_shop.exceptions.NoSuchInstrumentException;
+import com.company.musical_shop.musical_instruments.MusicalInstrument;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class MusicalShop {
-    private List<MusicalInstrument> musicalInstruments;
+    private List<MusicalInstrument> instruments;
 
-    public List<MusicalInstrument> getMusicalInstruments() {
-        return musicalInstruments;
+    public List<MusicalInstrument> getInstruments() {
+        return instruments;
     }
 
-    public void setMusicalInstruments(List<MusicalInstrument> musicalInstruments) {
-        this.musicalInstruments = musicalInstruments;
+    public void setInstruments(List<MusicalInstrument> instruments) {
+        this.instruments = instruments;
     }
 
-    public void addInstruments(List<MusicalInstrument> musicalInstruments) {
-        for (MusicalInstrument instrument : musicalInstruments) {
-            this.musicalInstruments.add(instrument);
+    public void addInstruments(List<MusicalInstrument> instruments) {
+        for (MusicalInstrument instrument : instruments) {
+            this.instruments.add(instrument);
         }
     }
 
-    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NoInstrumentLeftException , NoSuchInstrumentException {
+    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NoInstrumentLeftException, NoSuchInstrumentException {
         List<MusicalInstrument> result = new ArrayList<>();
 
         for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
@@ -31,8 +34,8 @@ public class MusicalShop {
             Integer numberOfInstrumentToBeRemoved = orderEntry.getValue();
             int numberOfInstrumentsRemoved = 0;
 
-            for (MusicalInstrument instrument : this.getMusicalInstruments()) {
-                if (instrument.toString().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
+            for (MusicalInstrument instrument : this.getInstruments()) {
+                if (instrument.getName().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
                     result.add(instrument);
                     numberOfInstrumentsRemoved++;
                 }
@@ -54,10 +57,10 @@ public class MusicalShop {
             String instrumentName = orderEntry.getKey();
             Integer numberOfInstrumentToBeRemoved = orderEntry.getValue();
             int numberOfInstrumentsRemoved = 0;
-            Iterator<MusicalInstrument> iterator = this.getMusicalInstruments().iterator();
+            Iterator<MusicalInstrument> iterator = this.getInstruments().iterator();
             while (iterator.hasNext()) {
                 MusicalInstrument instrument = iterator.next();
-                if (instrument.toString().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
+                if (instrument.getName().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
                     iterator.remove();
                     numberOfInstrumentsRemoved++;
                 }

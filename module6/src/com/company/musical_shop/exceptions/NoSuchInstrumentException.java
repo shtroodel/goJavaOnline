@@ -1,7 +1,7 @@
-package com.company.musical_shop;
+package com.company.musical_shop.exceptions;
 
 public class NoSuchInstrumentException extends Exception {
-    NoSuchInstrumentException (String s) {
+    public NoSuchInstrumentException (String s) {
         System.out.println(s);
     }
 }

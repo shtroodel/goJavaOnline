@@ -1,5 +1,12 @@
 package com.company.musical_shop;
 
+import com.company.musical_shop.exceptions.NoInstrumentLeftException;
+import com.company.musical_shop.exceptions.NoSuchInstrumentException;
+import com.company.musical_shop.musical_instruments.Guitar;
+import com.company.musical_shop.musical_instruments.MusicalInstrument;
+import com.company.musical_shop.musical_instruments.Piano;
+import com.company.musical_shop.musical_instruments.Trumpet;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +31,7 @@ public class Main {
         instruments.add(new Trumpet());
 
         MusicalShop shop = new MusicalShop();
-        shop.setMusicalInstruments(instruments);
+        shop.setInstruments(instruments);
 
         Map<String, Integer> order1 = new HashMap<>();
 

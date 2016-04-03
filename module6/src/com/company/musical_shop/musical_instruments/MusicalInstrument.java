@@ -1,10 +1,12 @@
-package com.company.musical_shop;
+package com.company.musical_shop.musical_instruments;
 
 public class MusicalInstrument {
 
+    protected String name;
     protected int cost;
     protected String manufacturer;
 
+    public String getName() { return name; }
 
     public int getCost() {
         return cost;
@@ -14,6 +16,7 @@ public class MusicalInstrument {
         return manufacturer;
     }
 
+    public void setName(String name) { this.name = name; }
 
     public void setCost(int cost) {
         this.cost = cost;

@@ -1,7 +1,7 @@
-package com.company.musical_shop;
+package com.company.musical_shop.exceptions;
 
 public class NoInstrumentLeftException extends Exception {
-    NoInstrumentLeftException(String s) {
+    public NoInstrumentLeftException(String s) {
         System.out.println(s);
     }
 }
