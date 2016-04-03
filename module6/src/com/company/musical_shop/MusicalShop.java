@@ -17,6 +17,12 @@ public class MusicalShop {
         this.musicalInstruments = musicalInstruments;
     }
 
+    public void addInstruments(List<MusicalInstrument> musicalInstruments) {
+        for (MusicalInstrument instrument : musicalInstruments) {
+            this.musicalInstruments.add(instrument);
+        }
+    }
+
     public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NoInstrumentLeftException , NoSuchInstrumentException {
         List<MusicalInstrument> result = new ArrayList<>();
 
