@@ -18,9 +18,9 @@ public class Main {
 
         List<MusicalInstrument> instruments = new ArrayList<>();
 
-        instruments.add(new Guitar());
-        instruments.add(new Guitar());
-        instruments.add(new Guitar());
+        instruments.add(new Guitar());      //много однотипных строчек
+        instruments.add(new Guitar());      //нужно написать метод в MusicalShop, в который
+        instruments.add(new Guitar());      //можно передавать инструменты, которые пришли на "склад"
 
         instruments.add(new Piano());
         instruments.add(new Piano());

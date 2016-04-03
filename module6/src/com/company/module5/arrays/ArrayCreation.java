@@ -16,6 +16,8 @@ public class ArrayCreation {
         return array;
     }
 
+    //метод выполняет 2 действия: ввод с клавиатуры размера и создание нового массива, который потом и возвращает
+    //лучше сделать отдельные методы чтобы понятней было читать код
     public static int[] createNewArrayOfSize(){
 
         System.out.println("Input array's size:");
