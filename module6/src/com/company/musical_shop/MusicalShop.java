@@ -17,7 +17,7 @@ public class MusicalShop {
         this.musicalInstruments = musicalInstruments;
     }
 
-    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NoInstrumentLeftException {
+    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NoInstrumentLeftException , NoSuchInstrumentException {
         List<MusicalInstrument> result = new ArrayList<>();
 
         for (Map.Entry<String, Integer> orderEntry : order.entrySet()) {
@@ -32,7 +32,10 @@ public class MusicalShop {
                 }
             }
 
-            if (numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved)
+
+            if (numberOfInstrumentsRemoved == 0)
+                throw new NoSuchInstrumentException("There are no " + instrumentName + "s in the shop");
+            else if (numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved)
                 throw new NoInstrumentLeftException("Shop does not have enough " + instrumentName + "s");
         }
 
