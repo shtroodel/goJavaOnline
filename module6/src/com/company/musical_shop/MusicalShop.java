@@ -32,7 +32,7 @@ public class MusicalShop {
             int numberOfInstrumentsRemoved = 0;
 
             for (MusicalInstrument instrument : this.getMusicalInstruments()) {
-                if (instrument.getName().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
+                if (instrument.toString().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
                     result.add(instrument);
                     numberOfInstrumentsRemoved++;
                 }
@@ -57,7 +57,7 @@ public class MusicalShop {
             Iterator<MusicalInstrument> iterator = this.getMusicalInstruments().iterator();
             while (iterator.hasNext()) {
                 MusicalInstrument instrument = iterator.next();
-                if (instrument.getName().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
+                if (instrument.toString().equals(instrumentName) && numberOfInstrumentsRemoved < numberOfInstrumentToBeRemoved) {
                     iterator.remove();
                     numberOfInstrumentsRemoved++;
                 }
