@@ -2,7 +2,7 @@ package com.company.files;
 
 public class FileNameEncryption {
 
-    private static int SHIFT = 1;
+    private static int SHIFT = 10;
 
     public static void encode(File file){
         StringBuilder name = new StringBuilder(file.getName());
